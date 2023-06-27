@@ -42,6 +42,14 @@ class Application
 	public Configuration $config;
 
 	/**
+	 * The typed property value of Database class
+	 * Potential value will be object of the class
+	 *
+	 * @var Database $db
+	 */
+	public Database $db;
+
+	/**
 	 * Initiating various entry point for functionalities and features 
 	 *	 
 	 * @author ag-sanjjeev <resulttext>	 
@@ -50,8 +58,10 @@ class Application
 	public function __construct()
 	{
 		self::$app 					= 	$this;
-		
+
 		$this->config 				= 	new Configuration;
+
+		$this->db 					= 	new Database;
 
 	}
 
@@ -66,7 +76,7 @@ class Application
 	public function setRootPath($path = '')
 	{
 		self::$ROOT_DIR = $path;
-	}
+	}	
 
 	/**
 	 * This will point to routes establishment  
