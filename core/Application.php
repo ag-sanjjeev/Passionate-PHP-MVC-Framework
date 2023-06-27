@@ -50,6 +50,14 @@ class Application
 	public Database $db;
 
 	/**
+	 * The typed property value of Request class
+	 * Potential value will be object of the class
+	 *
+	 * @var Request $request
+	 */
+	public Request $request;
+
+	/**
 	 * Initiating various entry point for functionalities and features 
 	 *	 
 	 * @author ag-sanjjeev <resulttext>	 
@@ -62,6 +70,8 @@ class Application
 		$this->config 				= 	new Configuration;
 
 		$this->db 					= 	new Database;
+
+		$this->request 				= 	new Request;
 
 	}
 
