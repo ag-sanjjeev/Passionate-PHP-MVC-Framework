@@ -26,6 +26,22 @@ class Application
 	public static string $ROOT_DIR = "";
 
 	/**
+	 * The typed property value of application class reference 
+     * Potential value will be object of the class
+     *
+     * @var Application $app
+	 */
+	public static Application $app;
+
+	/**
+	 * The typed property value of configuration class
+	 * Potential value will be object of the class
+	 *
+	 * @var Configuration $config	 
+	 */
+	public Configuration $config;
+
+	/**
 	 * Initiating various entry point for functionalities and features 
 	 *	 
 	 * @author ag-sanjjeev <resulttext>	 
@@ -33,7 +49,10 @@ class Application
 	 */
 	public function __construct()
 	{
-						
+		self::$app 					= 	$this;
+		
+		$this->config 				= 	new Configuration;
+
 	}
 
 	/**
