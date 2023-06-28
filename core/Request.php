@@ -27,9 +27,9 @@ class Request
 	/**
 	 * The value of request method
 	 *
-	 * @var string $methodRequest
+	 * @var string $method
 	 */
-	public static string $methodRequest = "";
+	public static string $method = "";
 
 	/**
 	 * The value of all data from request
@@ -54,7 +54,7 @@ class Request
 	public function __construct()
 	{
 		self::$urlPath 			= 	$this->url();
-		self::$methodRequest	= 	$this->method();
+		self::$method 			= 	$this->method();
 		self::$input 			= 	$this->initInput();
 	}
 
