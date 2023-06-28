@@ -63,6 +63,24 @@ class Response
 	}
 
 	/**
+	 * Sets the content type of the page
+	 *
+	 * @param content-type $contentType this must be a valid content type	 
+	 *
+	 * @author ag-sanjjeev <resulttext>
+	 *
+	 */
+	public function setContentType($contentType)
+	{
+		if (empty($contentType)) {
+			throw new Exception("The valid content-type is not given", 1);
+			exit();
+		}
+
+		header("Content-Type:$contentType");
+	}
+
+	/**
 	 * Redirect the current page to given url path
 	 *
 	 * @param url path $urlPath this must be a valid url path	 
