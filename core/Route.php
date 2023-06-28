@@ -220,7 +220,7 @@ class Route
 			*/
 			$this->response->setStatusCode(404);
 			
-			return $this->response->view("default/404_error");
+			echo $this->response->view("default/404_error");
 		}
 
 		/*
@@ -234,7 +234,7 @@ class Route
 			This will directly point to the view page
 		*/
 		if (is_string($callback)) {			
-			return $this->response->view($callback);
+			echo $this->response->view($callback);
 		}
 
 		/*
@@ -251,7 +251,23 @@ class Route
 		/*
 			This will executes either custom user function or controller method
 		*/
-		return call_user_func($callback, $this->request, $this->response);
+		$responseView = call_user_func($callback, $this->request, $this->response);
+		
+		/*
+			If it is an array then it will display as json content-type
+		*/
+		if (is_array($responseView)) {
+			$this->response->setContentType('application/json');			
+			print_r($responseView);
+		}
+
+		/*
+			If it is a string then it will display as html content-type
+		*/
+		if (is_string($responseView)) {
+			$this->response->setContentType('text/html');
+			echo $responseView;
+		}
 		
 	}
 }
