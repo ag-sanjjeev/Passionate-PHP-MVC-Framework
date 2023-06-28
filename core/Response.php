@@ -119,10 +119,22 @@ class Response
 	 	}
 
 	 	/*
+			This will holds viewFile path
+	 	*/
+	 	$viewFilePath = Application::$ROOT_DIR . "/public/views/$viewFile.php";
+
+	 	/*
+			if view file is not exist from views directory then it renders as plain text
+	 	*/
+	 	if (!file_exists($viewFilePath)) {
+	 		return $this->renderContent($viewFile);
+	 	}
+	 	
+	 	/*
 			Includes viewfile as given
 	 	*/
 	 	ob_start();
-	 	include_once Application::$ROOT_DIR . "/views/$viewFile.php";
+	 	include_once $viewFilePath;
 	 	return ob_get_clean();
 	 }
 

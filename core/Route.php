@@ -220,7 +220,7 @@ class Route
 			*/
 			$this->response->setStatusCode(404);
 			
-			return $this->response->renderContent("default/404_error");
+			return $this->response->view("default/404_error");
 		}
 
 		/*
