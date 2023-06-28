@@ -42,6 +42,22 @@ class Application
 	public Configuration $config;
 
 	/**
+	 * The typed property value of Controller class
+	 * Potential value will be object of the class
+	 *
+	 * @var Controller $controller
+	 */
+	public Controller $controller;
+
+	/**
+	 * The typed property value of route class
+	 * Potential value will be object of the class
+	 *
+	 * @var Route $route	 
+	 */
+	public Route $route;
+
+	/**
 	 * The typed property value of Database class
 	 * Potential value will be object of the class
 	 *
@@ -69,9 +85,15 @@ class Application
 
 		$this->config 				= 	new Configuration;
 
-		$this->db 					= 	new Database;
+		// $this->db 					= 	new Database;
 
 		$this->request 				= 	new Request;
+
+		$this->controller 			= 	new Controller;
+
+		$this->route 				= 	new Route;
+
+
 
 	}
 
@@ -96,6 +118,6 @@ class Application
 	 */
 	public function run()
 	{
-		
+		$this->route->establish();
 	}
 }
