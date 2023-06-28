@@ -118,6 +118,6 @@ class Application
 	 */
 	public function run()
 	{
-		$this->route->establish();
+		echo $this->route->establish();
 	}
 }

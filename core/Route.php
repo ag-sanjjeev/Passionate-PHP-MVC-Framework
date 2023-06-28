@@ -189,7 +189,7 @@ class Route
 	 * @author ag-sanjjeev <resulttext>
 	 * @return response or callback
 	 */
-	public static function establish()
+	public function establish()
 	{
 		/*
 			Getting current url path from Request class
@@ -215,10 +215,12 @@ class Route
 			If callback false then there is no valid callback which returns 404 response
 		*/
 		if ($callback === false) {
-			//set status code 404
-			// $this->response->setStatusCode(404);
-			//return response 404
-			// return $this->response->renderContent("404 not found");
+			/*
+				Sets http response code to 404 page not found error
+			*/
+			$this->response->setStatusCode(404);
+			
+			return $this->response->renderContent("default/404_error");
 		}
 
 		/*
@@ -231,9 +233,8 @@ class Route
 		/*
 			This will directly point to the view page
 		*/
-		if (is_string($callback)) {
-			echo $callback;
-			return;
+		if (is_string($callback)) {			
+			return $this->response->view($callback);
 		}
 
 		/*
@@ -250,7 +251,7 @@ class Route
 		/*
 			This will executes either custom user function or controller method
 		*/
-		return call_user_func($callback, $this->request);
+		return call_user_func($callback, $this->request, $this->response);
 		
 	}
 }
