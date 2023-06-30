@@ -2,6 +2,7 @@
 
 namespace app\core;
 
+use app\core\Template;
 /**
  * Class Response
  *
@@ -53,7 +54,7 @@ class Response
 	public function setStatusCode($code)
 	{
 		if (empty($code)) {
-			throw new Exception("The valid response code is not given", 1);
+			throw new \Exception("The valid response code is not given", 1);
 			exit();
 		}
 
@@ -73,7 +74,7 @@ class Response
 	public function setContentType($contentType)
 	{
 		if (empty($contentType)) {
-			throw new Exception("The valid content-type is not given", 1);
+			throw new \Exception("The valid content-type is not given", 1);
 			exit();
 		}
 
@@ -91,7 +92,7 @@ class Response
 	public function redirect($urlPath)
 	{
 		if (empty($urlPath)) {
-			throw new Exception("Redirecting url path is not given", 1);
+			throw new \Exception("Redirecting url path is not given", 1);
 			exit();
 		}
 
@@ -104,22 +105,23 @@ class Response
 	 *
 	 * @param text/html content $content this must be a text/html content	 	 
 	 * @author ag-sanjjeev <resulttext>
-	 *
+	 * 
 	 */
-	 public function renderContent($content)
-	 {
-	 	echo $content;
-	 }
+	public function renderContent($content)
+	{
+		echo $content;
+	}
 
-	 /**
-	  * Renders view file only from views
-	  *
-	  * @param file path $viewFile this must be a valid view file location inside views directory
-	  * @param parameters $params this must be array values to used inside that view
-	  * @author ag-sanjjeev <resulttext>
-	  */
-	 public function renderOnlyView($viewFile, $params = [])
-	 {
+	/**
+	 * Renders view file only from views
+	 *
+	 * @param file path $viewFile this must be a valid view file location inside views directory
+	 * @param parameters $params this must be array values to used inside that view
+	 * @author ag-sanjjeev <resulttext>
+	 * @return view content only
+	 */
+	public function renderOnlyView($viewFile, $params = [])
+	{
 	 	/*
 			Converts $params array into seperate variables
 	 	*/
@@ -154,19 +156,28 @@ class Response
 	 	ob_start();
 	 	include_once $viewFilePath;
 	 	return ob_get_clean();
-	 }
+	}
 
-	 /**
-	  * Renders view
-	  *
-	  * @param file path $viewFile this must be a valid view file location inside views directory
-	  * @param parameters $params this must be array values to used inside that view
-	  * @author ag-sanjjeev <resulttext>
-	  */
-	 public function view($viewFile, $params = [])
-	 {	
+	/**
+	 * Renders view
+	 *
+	 * @param file path $viewFile this must be a valid view file location inside views directory
+	 * @param parameters $params this must be array values to used inside that view
+	 * @author ag-sanjjeev <resulttext>
+	 * @return processed view content
+	 */
+	public function view($viewFile, $params = [])
+	{		 	
+		/*
+			Getting view content from view file path
+		*/
+		$viewContent = $this->renderOnlyView($viewFile, $params);
 
-	 	$viewContent = $this->renderOnlyView($viewFile, $params);
-	 	return $viewContent;
-	 }
+		/*
+			Rendering template if exist otherwise simply renders view
+		*/
+	 	$template = new Template($viewContent);
+	 	return $template->render();
+	}	
+	
 }

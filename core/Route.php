@@ -177,7 +177,7 @@ class Route
 		if (class_exists($nsMiddleware)) {
 			self::$middlewares[self::$method][self::$urlPath] = $nsMiddleware;
 		} else {
-			throw new Exception("$middleware is not exist in the $nsMiddleware", 1);
+			throw new \Exception("$middleware is not exist in the $nsMiddleware", 1);
 			exit();
 		}
 
@@ -221,6 +221,7 @@ class Route
 			$this->response->setStatusCode(404);
 			
 			echo $this->response->view("default/404_error");
+			return;
 		}
 
 		/*
@@ -235,6 +236,7 @@ class Route
 		*/
 		if (is_string($callback)) {			
 			echo $this->response->view($callback);
+			return;
 		}
 
 		/*
@@ -259,6 +261,7 @@ class Route
 		if (is_array($responseView)) {
 			$this->response->setContentType('application/json');			
 			print_r($responseView);
+			return;
 		}
 
 		/*
@@ -267,6 +270,7 @@ class Route
 		if (is_string($responseView)) {
 			$this->response->setContentType('text/html');
 			echo $responseView;
+			return;
 		}
 		
 	}

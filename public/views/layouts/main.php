@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title><?php echo $title ?></title>
+	@yield('links')
+</head>
+<body class="test">
+	<div style="background-color: blue; color: yellow;">
+		@yield('content')		
+	</div>
+
+	<div>
+		@yield('content2')
+	</div>
+
+	
+</body>
+</html>
