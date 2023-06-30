@@ -167,7 +167,20 @@ class Response
 	 * @return processed view content
 	 */
 	public function view($viewFile, $params = [])
-	{		 	
+	{	
+		/*
+			This will holds viewFile path
+	 	*/
+	 	$viewFilePath = Application::$ROOT_DIR . "/public/views/$viewFile.php";
+
+	 	/*
+			if view file is not exist from views directory then it renders as plain text
+	 	*/
+	 	if (!file_exists($viewFilePath)) {
+	 		throw new \Exception("$viewFile is not exist", 1);
+	 		exit();
+	 	}
+
 		/*
 			Getting view content from view file path
 		*/
