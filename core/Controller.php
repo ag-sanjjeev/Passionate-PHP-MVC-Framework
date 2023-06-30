@@ -2,10 +2,14 @@
 
 namespace app\core;
 
+use app\core\Request;
+use app\core\Response;
+
 /**
- * Class Controller
+ * Controller class
  *
- * This is a controller class file. Which has control for views
+ * This is a controller class file. 
+ * Which will be extend for all other controllers in this application
  *
  * @copyright 2023 ag-sanjjeev
  * @license url MIT
@@ -13,13 +17,11 @@ namespace app\core;
  * @link url
  * @since Class available since Release 1.0
  */
-class Controller
+class Controller 
 {
-	
 	function __construct()
 	{
 		
 	}
 
-	
 }

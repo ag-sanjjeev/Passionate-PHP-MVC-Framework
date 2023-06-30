@@ -89,7 +89,7 @@ class Application
 
 		$this->request 				= 	new Request;
 
-		$this->controller 			= 	new Controller;
+		// $this->controller 			= 	new Controller;
 
 		$this->route 				= 	new Route;
 
