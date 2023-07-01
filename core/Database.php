@@ -60,4 +60,21 @@ class Database
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 	}
+
+	/**
+	 * Query method is used for execute raw queries
+	 *	 
+	 * @param query string $query this must be a query string
+	 * @param field values array $values this must be a positional value for query
+	 * @author ag-sanjjeev <resulttext>
+	 * @return $prepare
+	 *
+	 */
+	public function query($query, $values = array())
+	{		
+		$prepare = $this->pdo->prepare($query);
+		$prepare->execute($values);
+
+		return $prepare;
+	}
 }
