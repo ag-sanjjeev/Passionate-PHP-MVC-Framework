@@ -120,13 +120,13 @@ Refer sample controller implementation in `controllers` directory
 
 Views are responsible for rendering the presentation layer of your application. In the PHP MVC Framework, views are located in the `public/views` directory. Views typically contain a mixture of HTML and PHP code, and they can utilize the provided template engine to separate presentation logic from business logic.
 
-For more information on views, refer to the [Views](docs/views.md) documentation.
+For more information on views, refer to the [Views](views.md) documentation.
 
 ## Models
 
 Models represent the data and business logic of your application. In the PHP MVC Framework, models are located in the `models` directory. Models interact with the database and provide an abstraction layer for data manipulation.
 
-For more information on models, refer to the [Models](docs/models.md) documentation.
+For more information on models, refer to the [Models](models.md) documentation.
 
 ## Authentication and Authorization
 
