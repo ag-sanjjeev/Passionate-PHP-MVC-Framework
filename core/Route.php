@@ -190,7 +190,11 @@ class Route
 	 * @return response or callback
 	 */
 	public function establish()
-	{
+	{	
+		/*
+			Initializing empty parameters array
+		*/
+		$params = [];
 		/*
 			Getting current url path from Request class
 		*/
@@ -210,6 +214,106 @@ class Route
 			Getting middleware for current request if exist otherwise false
 		*/
 		$middleware 		= 	self::$middlewares['any'][$urlPath] ?? self::$middlewares[$method][$urlPath] ?? false;
+
+		/*
+			If the route path has {$var} in it. Then it extracted from Route definitions for requested method and assign callback with middleware if exist for it
+		*/
+		if ($callback === false) {
+			
+			/*
+				Checking through all available routes for {$var}
+			*/
+			foreach (self::$routes[$method] as $key => $value) {
+				
+				/*
+					Regex pattern for matching url path with {$var}
+				*/
+				$pattern = '#^' . preg_replace('/\{\$[a-zA-Z0-9_]+\}/', '([^/]+)', $key) . '$#';
+				
+				preg_match($pattern, $urlPath, $matches);
+				
+				/*
+					If there is any matches then assigns callback and middleware for it
+				*/
+				if(!empty($matches)) {	
+
+					/*
+						Regex pattern for extracting {$var} from url
+					*/
+			        preg_match_all('/\{\$([a-zA-Z0-9_]+)\}/', $key, $paramNames);
+
+			        /*
+						Assigning {$var} to $params array
+			        */
+			        foreach ($paramNames[1] as $index => $paramName) {
+			          $params[$paramName] = $matches[$index + 1];
+			        }
+
+			        /*
+						Assigning callback from Route definitions
+			        */
+			        $callback = $value;
+
+			        /*
+						Assigning middleware from Route definitions
+			        */
+			        $middleware = self::$middlewares[$method][$key] ?? false;
+
+			        break;
+				}
+			}
+
+		}
+
+		/*
+			If the route path has {$var} in it. Then it extracted from Route definitions for any method and assign callback with middleware if exist for it
+		*/
+		if ($callback === false) {
+			
+			/*
+				Checking through all available routes for {$var}
+			*/
+			foreach (self::$routes['any'] as $key => $value) {
+				
+				/*
+					Regex pattern for matching url path with {$var}
+				*/
+				$pattern = '#^' . preg_replace('/\{\$[a-zA-Z0-9_]+\}/', '([^/]+)', $key) . '$#';
+				
+				preg_match($pattern, $urlPath, $matches);
+				
+				/*
+					If there is any matches then assigns callback and middleware for it
+				*/
+				if(!empty($matches)) {	
+
+					/*
+						Regex pattern for extracting {$var} from url
+					*/
+			        preg_match_all('/\{\$([a-zA-Z0-9_]+)\}/', $key, $paramNames);
+
+			        /*
+						Assigning {$var} to $params array
+			        */
+			        foreach ($paramNames[1] as $index => $paramName) {
+			          $params[$paramName] = $matches[$index + 1];
+			        }
+
+			        /*
+						Assigning callback from Route definitions
+			        */
+			        $callback = $value;
+
+			        /*
+						Assigning middleware from Route definitions
+			        */
+			        $middleware = self::$middlewares['any'][$key] ?? false;
+
+			        break;
+				}
+			}
+
+		}
 
 		/*
 			If callback false then there is no valid callback which returns 404 response
@@ -247,13 +351,84 @@ class Route
 		*/
 		if (is_array($callback)) {
 			Application::$app->controller = new $callback[0]();
-			$callback[0] = Application::$app->controller;
+			$callback[0] = Application::$app->controller;			
+		}
+		
+		/*
+			Initiating methodArgs for arguments for callback method
+		*/
+		$methodArgs = array();
+
+		/*
+			Merging request and response instance with params
+		*/
+		$params = array_merge(array($this->request, $this->response), $params);
+		
+		/*
+			Assigns $params to $methodArgs
+		*/
+		if (!is_object($callback)) {
+
+			/*
+				Using reflection method for given callback and it's method, to get no.of parameters bound with it
+			*/
+			$reflectionMethod = new \ReflectionMethod($callback[0], $callback[1]);			
+			$methodParams = $reflectionMethod->getParameters();
+			
+			/*
+				Assigning $methodArgs with $methodParams
+			*/
+			foreach ($methodParams as $param) {
+			    $paramName = $param->getName();
+			    if ($paramName === 'request') {
+			        $methodArgs[] = $this->request;
+			    } elseif ($paramName === 'response') {
+			        $methodArgs[] = $this->response;
+			    } elseif (isset($params[$paramName])) {
+			        $methodArgs[] = $params[$paramName];
+			    } else {
+			        if ($param->isDefaultValueAvailable()) {
+			            $methodArgs[] = $param->getDefaultValue();
+			        } else {
+			            // Handle missing parameters or provide default values if necessary
+			            $methodArgs[] = null;
+			        }
+			    }
+			}
+
+		} else {
+			/*
+				Using reflection function for given callback function, to get no.of parameters bound with it
+			*/
+			$reflectionFunction = new \ReflectionFunction($callback);
+			$methodParams = $reflectionFunction->getParameters();
+
+			/*
+				Assigning $methodArgs with $methodParams
+			*/
+			foreach ($methodParams as $param) {
+			    $paramName = $param->getName();
+			    if ($paramName === 'request') {
+			        $methodArgs[] = $this->request;
+			    } elseif ($paramName === 'response') {
+			        $methodArgs[] = $this->response;
+			    } elseif (isset($params[$paramName])) {
+			        $methodArgs[] = $params[$paramName];
+			    } else {
+			        if ($param->isDefaultValueAvailable()) {
+			            $methodArgs[] = $param->getDefaultValue();
+			        } else {
+			            // Handle missing parameters or provide default values if necessary
+			            $methodArgs[] = null;
+			        }
+			    }
+			}
 		}
 
 		/*
 			This will executes either custom user function or controller method
 		*/
-		$responseView = call_user_func($callback, $this->request, $this->response);
+		$responseView = call_user_func_array($callback, $methodArgs);
 		
 		/*
 			If it is an array then it will display as json content-type
