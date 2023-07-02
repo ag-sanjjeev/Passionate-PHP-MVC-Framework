@@ -42,14 +42,6 @@ class Application
 	public Configuration $config;
 
 	/**
-	 * The typed property value of Controller class
-	 * Potential value will be object of the class
-	 *
-	 * @var Controller $controller
-	 */
-	public Controller $controller;
-
-	/**
 	 * The typed property value of route class
 	 * Potential value will be object of the class
 	 *
@@ -58,20 +50,36 @@ class Application
 	public Route $route;
 
 	/**
-	 * The typed property value of Database class
-	 * Potential value will be object of the class
-	 *
-	 * @var Database $db
-	 */
-	public Database $db;
-
-	/**
 	 * The typed property value of Request class
 	 * Potential value will be object of the class
 	 *
 	 * @var Request $request
 	 */
 	public Request $request;
+
+	/**
+	 * The typed property value of Session class
+	 * Potential value will be object of the class
+	 *
+	 * @var Session $session
+	 */
+	public Session $session;
+
+	/**
+	 * The typed property value of Cookie class
+	 * Potential value will be object of the class
+	 *
+	 * @var Cookie $cookie
+	 */
+	public Cookie $cookie;
+
+	/**
+	 * The typed property value of Response class
+	 * Potential value will be object of the class
+	 *
+	 * @var Response $response
+	 */
+	public Response $response;
 
 	/**
 	 * Initiating various entry point for functionalities and features 
@@ -85,15 +93,15 @@ class Application
 
 		$this->config 				= 	new Configuration;
 
-		// $this->db 					= 	new Database;
-
 		$this->request 				= 	new Request;
-
-		// $this->controller 			= 	new Controller;
 
 		$this->route 				= 	new Route;
 
+		$this->session 				= 	new Session;
 
+		$this->cookie 				= 	new Cookie;
+
+		$this->response 			= 	new Response;
 
 	}
 

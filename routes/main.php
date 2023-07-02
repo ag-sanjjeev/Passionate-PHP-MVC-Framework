@@ -13,4 +13,12 @@ Route::get('/home', function() {
 
 Route::any('/test', 'test');
 
-Route::get('/demo', [Democontroller::class, 'index']);
+Route::get('/demo', [Democontroller::class, 'index'])->middleware('auth');
+
+Route::any('/user/{$username}/posts/{$id}', [Democontroller::class, 'postPage']);
+
+Route::get('/user/{$username}/posts/{$id}', [Democontroller::class, 'postPage']);
+
+Route::get('/another/{$var}', function($var) {
+	return $var;
+});
