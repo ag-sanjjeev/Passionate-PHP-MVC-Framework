@@ -13,10 +13,10 @@ Welcome to the documentation for the PASSIONATE PHP MVC Framework!. This documen
 5. [Views](#views)
 6. [Models](#models)
 7. [Authentication and Authorization](#authentication-and-authorization)
-11. [Contributing](#contributing)
-12. [License](#license)
-13. [Acknowledgements](#acknowledgements)
-14. [Contact](#contact)
+8. [Contributing](#contributing)
+9. [License](#license)
+10. [Acknowledgements](#acknowledgements)
+11. [Contact](#contact)
 
 ## Getting Started
 
