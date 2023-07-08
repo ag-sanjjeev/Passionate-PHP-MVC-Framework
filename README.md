@@ -52,7 +52,7 @@ Contributions are welcome! If you have any suggestions, bug reports, or feature 
 
 ## License
 
-This PHP MVC Framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute it as per the terms of the license.
+This PHP MVC Framework is open-source software licensed under the [MIT license](LICENSE). Feel free to use, modify, and distribute it as per the terms of the license.
 
 ## Acknowledgments
 
