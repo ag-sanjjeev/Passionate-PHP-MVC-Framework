@@ -20,7 +20,7 @@ Welcome to the documentation for the PASSIONATE PHP MVC Framework!. This documen
 
 ## Getting Started
 
-To get started with the PASSIONATE PHP MVC Framework, follow the installation instructions provided in the [README.md](README.md) file of the repository. Once installed, you can begin building your web application using this framework.
+To get started with the PASSIONATE PHP MVC Framework, follow the installation instructions provided in the [README.md](../README.md) file of the repository. Once installed, you can begin building your web application using this framework.
 
 ## Directory Structure
 
