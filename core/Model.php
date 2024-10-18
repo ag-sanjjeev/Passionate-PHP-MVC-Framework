@@ -51,7 +51,7 @@ class Model extends Database
 	/**
 	 * It will return all records from $table
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return table records
 	 */
 
@@ -71,7 +71,7 @@ class Model extends Database
 	/**
 	 * Initiates class properties from child class
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	protected function initProperties()
 	{
@@ -124,7 +124,7 @@ class Model extends Database
 	/**
 	 * Magic method for setting dynamic properties
 	 *	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function _set($name, $value)
@@ -135,7 +135,7 @@ class Model extends Database
 	/**
 	 * Magic method for getting dynamic properties
 	 *	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $d[$name]
 	 *
 	 */
@@ -148,7 +148,7 @@ class Model extends Database
 	 * Get class name for which of the class is extends it. 
 	 * This may be a valid tablename property
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return table records
 	 */
 	protected function tableName()
@@ -171,7 +171,7 @@ class Model extends Database
 	/**
 	 * Get table columns name
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $tableColumns	 
 	 */
 	protected function tableColums()
@@ -206,7 +206,7 @@ class Model extends Database
 	/**
 	 * Get all record for the table
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return array	 
 	 */
 	public function all()
@@ -228,7 +228,7 @@ class Model extends Database
 	 * Get specific record from the table by primary key
 	 *
 	 * @param primary key $id this must be a primary key of the table
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return array
 	 */
 	public function find($id)
@@ -266,7 +266,7 @@ class Model extends Database
 	 * Create record in the table with given data
 	 *
 	 * @param record array $record this must be an array of values with associative index
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 */
 	public function create($record)
 	{	
@@ -321,7 +321,7 @@ class Model extends Database
 	 *
 	 * @param primary key $id this must be a primary key of the table
 	 * @param record array $record this must be an array of values with associative index
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 */
 	public function update($id, $record)
 	{	
@@ -384,7 +384,7 @@ class Model extends Database
 	 * Deleting record from the table by a primary key
 	 *
 	 * @param primary key $id this must be a primary key of the table	 
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 */
 	public function delete($id)
 	{
