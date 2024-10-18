@@ -49,7 +49,7 @@ class Session
 	 *
 	 * @param session name $name this is an associative index of session value
 	 * @param session value $value this is a value to be stored against name
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function set($name, $value)
@@ -61,7 +61,7 @@ class Session
 	 * Getting session value
 	 *	
 	 * @param session name $name this is an associative index of session value
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return session value
 	 *
 	 */
@@ -73,7 +73,7 @@ class Session
 	/**
 	 * Regenerates session id
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	public function regenerate()
 	{
@@ -84,7 +84,7 @@ class Session
 	 * Emptying only specific session value from session
 	 *
 	 * @param session name $name this is an associative index of session value
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	public function unsetOnly($name)
 	{
@@ -96,7 +96,7 @@ class Session
 	/**
 	 * Emptying entire session value from session
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	public function unset()
 	{
@@ -106,7 +106,7 @@ class Session
 	/**
 	 * Destroys the session
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	public function destroy()
 	{
@@ -118,7 +118,7 @@ class Session
 	 * 
 	 * @param session name $name this is an associative index of session value
 	 * @param session value $value this is a value to be stored against name 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return session value or nothing	 
 	 */
 	public function flash($name, $value = '')
@@ -141,7 +141,7 @@ class Session
 	 * Maintains the session flash for the further requests
 	 * It need to call after accessing session flash before any redirections
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	public function reflash()
 	{
@@ -151,7 +151,7 @@ class Session
 	/**
 	 * Emptying entire session flash
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	public function unsetFlash()
 	{
