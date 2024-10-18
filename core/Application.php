@@ -84,7 +84,7 @@ class Application
 	/**
 	 * Initiating various entry point for functionalities and features 
 	 *	 
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 *
 	 */
 	public function __construct()
@@ -110,7 +110,7 @@ class Application
 	 *
 	 * @param directory $path this must be a project directory location	 
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function setRootPath($path = '')
@@ -121,7 +121,7 @@ class Application
 	/**
 	 * This will point to routes establishment  
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function run()

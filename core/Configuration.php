@@ -85,7 +85,7 @@ class Configuration
   	/**
 	 * Assignment of property values inside this constructor method executes
 	 *	 
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 *
 	 */
 	public function __construct()
