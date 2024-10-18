@@ -38,7 +38,7 @@ class Database
 	/**
 	 * Establishing database connection based on credentials 
 	 *	 
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 *
 	 */
 	public function __construct()
@@ -66,7 +66,7 @@ class Database
 	 *	 
 	 * @param query string $query this must be a query string
 	 * @param field values array $values this must be a positional value for query
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $prepare
 	 *
 	 */
