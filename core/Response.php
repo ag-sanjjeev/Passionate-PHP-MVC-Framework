@@ -35,7 +35,7 @@ class Response
 	/**
 	 * Initiating entry point for response
 	 *	 
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 *
 	 */
 	function __construct()
@@ -48,7 +48,7 @@ class Response
 	 *
 	 * @param http response code $code this must be a valid http response code	 
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function setStatusCode($code)
@@ -68,7 +68,7 @@ class Response
 	 *
 	 * @param content-type $contentType this must be a valid content type	 
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function setContentType($contentType)
@@ -86,7 +86,7 @@ class Response
 	 *
 	 * @param url path $urlPath this must be a valid url path	 
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function redirect($urlPath)
@@ -104,7 +104,7 @@ class Response
 	 * Renders given content as it is
 	 *
 	 * @param text/html content $content this must be a text/html content	 	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * 
 	 */
 	public function renderContent($content)
@@ -117,7 +117,7 @@ class Response
 	 *
 	 * @param file path $viewFile this must be a valid view file location inside views directory
 	 * @param parameters $params this must be array values to used inside that view
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return view content only
 	 */
 	public function renderOnlyView($viewFile, $params = [])
@@ -163,7 +163,7 @@ class Response
 	 *
 	 * @param file path $viewFile this must be a valid view file location inside views directory
 	 * @param parameters $params this must be array values to used inside that view
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return processed view content
 	 */
 	public function view($viewFile, $params = [])
