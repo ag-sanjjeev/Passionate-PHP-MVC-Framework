@@ -62,7 +62,7 @@ class Template extends Response
 	 * Checking for @layout content in the content
 	 *
 	 * @param string content $content this must be a valid string content	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 */
 	protected function isLayoutExist($content)
@@ -104,7 +104,7 @@ class Template extends Response
 	/**
 	 * Getting layout details
 	 *	 	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 */
 	protected function getLayoutDetails()
 	{
@@ -178,7 +178,7 @@ class Template extends Response
 	 *
 	 * @param file path $layoutFile this must be a valid layout file location inside views/layouts directory
 	 * @param parameters $params this must be array values to used inside that layout and view
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return layout content
 	 */
 	protected function layout($layoutFile, $params = [])
@@ -192,7 +192,7 @@ class Template extends Response
 	/**
 	 * Checking for any section exist
 	 *	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 */
 	protected function isSectionExist()
@@ -210,7 +210,7 @@ class Template extends Response
 	 * @param section names $sections this must be an array of sections name
 	 * @param section contents $sectionContent this must be an array of section content
 	 * @param template content $template this must be a template content
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return template
 	 */
 	protected function injectSectionIntoYield($sections = [], $sectionContent, $template)
@@ -225,7 +225,7 @@ class Template extends Response
 	 * Filter to get available section name in the layout @yields
 	 *
 	 * @param template content $template this must be a template content
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return array of section names
 	 */
 	protected function filterSections($template)
@@ -240,7 +240,7 @@ class Template extends Response
 	 *
 	 * @param section names $sections this must be an array of section names
 	 * @param view content $viewContent this must be a view content
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return array of sectionContent and viewContent
 	 */
 	protected function extractSections($sectionNames = [], $viewContent)
@@ -288,7 +288,7 @@ class Template extends Response
 	 * 
 	 * @param template content $template this must be a template content
 	 * @param non-section content $newViewContent this must be a non-section content
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return template content
 	 */
 	protected function appendRemainingContent($template, $nonSectionedContent)
@@ -392,7 +392,7 @@ class Template extends Response
 	/**
 	 * Renders the layout
 	 *	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return rendered view content
 	 */
 	public function render()
