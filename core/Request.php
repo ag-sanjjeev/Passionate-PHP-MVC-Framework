@@ -48,7 +48,7 @@ class Request
 	/**
 	 * This will evaluate all request and collects essential information of the request     
      *
-     * @author ag-sanjjeev <resulttext>	
+     * @author ag-sanjjeev 	
      *
 	 */
 	public function __construct()
@@ -61,7 +61,7 @@ class Request
 	/**
 	 * Magic method for setting dynamic properties
 	 *	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 *
 	 */
 	public function _set($name, $value)
@@ -72,7 +72,7 @@ class Request
 	/**
 	 * Magic method for getting dynamic properties
 	 *	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $d[$name]
 	 *
 	 */
@@ -84,7 +84,7 @@ class Request
 	/**
 	 * This will collect all data from the request
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $data
 	 *
 	 */
@@ -120,7 +120,7 @@ class Request
 	/**
 	 * This will short-out requested url and eliminates any other url parameter
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return urlPath
 	 *
 	 */
@@ -144,7 +144,7 @@ class Request
 	/**
 	 * This will return full url with it's parameters
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return fullUrlPath
 	 *
 	 */
@@ -163,7 +163,7 @@ class Request
 	 * This will check whether givern url string matches with the request url
 	 *
 	 * @param url $urlName this is url string
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 *
 	 */
@@ -215,7 +215,7 @@ class Request
 	/**
 	 * This will collect ip address of requested user and returns it
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return ipAddress
 	 *
 	 */
@@ -239,7 +239,7 @@ class Request
 	/**
 	 * This will get information about method of the request
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return method
 	 *
 	 */
@@ -251,7 +251,7 @@ class Request
 	/**
 	 * This will checks whether it is get method or not
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return boolean
 	 * 
 	 */
@@ -263,7 +263,7 @@ class Request
 	/**
 	 * This will checks whether it is post method or not
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return boolean
 	 * 
 	 */
@@ -275,7 +275,7 @@ class Request
 	/**
 	 * This will return collected input as per requirement
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $data
 	 *
 	 */
@@ -298,7 +298,7 @@ class Request
 	 * This will return only specific inputs as per requirements
 	 *
 	 * @param inputNames $onlyInputs This is combination input names
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return array	 
 	 *
 	 */
@@ -325,7 +325,7 @@ class Request
 	 * This will return except specific inputs as per requirements
 	 *
 	 * @param inputNames $exceptInputs This is combination of input names
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return array	 
 	 *
 	 */
@@ -362,7 +362,7 @@ class Request
 	 * This will check for all of the input key exist in the input
 	 *
 	 * @param InputNames $hasInput This is combination of input names
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 *
 	 */
@@ -389,7 +389,7 @@ class Request
 	 * This will check for any of the input key exist in the input
 	 *
 	 * @param InputNames $hasInput This is combination of input names
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 *
 	 */
@@ -417,7 +417,7 @@ class Request
 	 * And if the input name is not exist in the $input then it will be false
 	 *
 	 * @param InputNames $inputName This is combination of input names
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 *
 	 */
@@ -448,7 +448,7 @@ class Request
 	 * And if the input name is not exist in the $input then it will be false
 	 *
 	 * @param InputNames $inputName This is combination of input names
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 *
 	 */
@@ -476,7 +476,7 @@ class Request
 	 * This will check for any of the input key is not exist in the input
 	 *
 	 * @param InputNames $missingInput This is combination of input names
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool
 	 *
 	 */
@@ -502,7 +502,7 @@ class Request
 	/**
 	 * Get all acceptable content types for the request
 	 *
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return array 
 	 *
 	 */
@@ -518,7 +518,7 @@ class Request
 	 * It will checks whether the request accepts given contentTypes
 	 *
 	 * @param contents $contentTypes The combination content types
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return bool 
 	 *
 	 */
