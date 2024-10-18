@@ -60,6 +60,6 @@ We would like to express our gratitude to the open-source community for their co
 
 ## Contact
 
-If you have any questions or need further assistance, please feel free to reach me at [Email](mailto:resulttext)
+If you have any questions or need further assistance, please feel free to reach me by referring [My Github Profile](https://github.com/ag-sanjjeev/)
 
 Thanks for reviewing this project!
