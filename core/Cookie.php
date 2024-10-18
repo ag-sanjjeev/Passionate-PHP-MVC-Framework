@@ -26,7 +26,7 @@ class Cookie {
      * @param domain name $domain This is a valid domain name that cookie going to use
      * @param security $secure This is boolean value for whether cookie accessible in secure or not
      * @param http $httponly This is boolean value whether accessible in http or https 
-     * @author ag-sanjjeev <resulttext>
+     * @author ag-sanjjeev 
      */
     public static function set($name, $value, $expire = 0, $path = '/', $domain = '', $secure = false, $httponly = false) {
         setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
@@ -36,7 +36,7 @@ class Cookie {
      * Get cookie
      *
      * @param cookie name $name This is a valid cookie name
-     * @author ag-sanjjeev <resulttext>
+     * @author ag-sanjjeev 
      * @return cookie
      */
     public static function get($name) {
@@ -47,7 +47,7 @@ class Cookie {
      * Checks if cookie exist
      *
      * @param cookie name $name This is a valid cookie name
-     * @author ag-sanjjeev <resulttext>
+     * @author ag-sanjjeev 
      * @return bool
      */
     public static function has($name) {
@@ -60,7 +60,7 @@ class Cookie {
      * @param cookie name $name This is a valid cookie name
      * @param url path $path This is a valid url path by default current path
      * @param domain name $domain This is a valid domain name that cookie going to use
-     * @author ag-sanjjeev <resulttext>
+     * @author ag-sanjjeev 
      */
     public static function delete($name, $path = '/', $domain = '') {
         if (self::has($name)) {
@@ -72,7 +72,7 @@ class Cookie {
     /**
      * Get all cookie
      *
-     * @author ag-sanjjeev <resulttext>
+     * @author ag-sanjjeev 
      * @return cookies
      */
     public static function all() {
@@ -84,7 +84,7 @@ class Cookie {
      *
      * @param url path $path This is a valid url path by default current path
      * @param domain name $domain This is a valid domain name that cookie going to use
-     * @author ag-sanjjeev <resulttext>     
+     * @author ag-sanjjeev      
      */
     public static function deleteAll($path = '/', $domain = '') {
         foreach ($_COOKIE as $name => $value) {
