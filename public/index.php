@@ -17,7 +17,7 @@
  *
  * @category Framework
  * @package main
- * @author ag-sanjjeev <resulttext>
+ * @author ag-sanjjeev 
  * @copyright 2023 ag-sanjjeev
  * @license url MIT
  * @version Release: @1.0@
