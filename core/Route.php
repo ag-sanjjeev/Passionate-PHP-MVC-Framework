@@ -273,43 +273,45 @@ class Route
 			/*
 				Checking through all available routes for {$var}
 			*/
-			foreach (self::$routes['any'] as $key => $value) {
-				
-				/*
-					Regex pattern for matching url path with {$var}
-				*/
-				$pattern = '#^' . preg_replace('/\{\$[a-zA-Z0-9_]+\}/', '([^/]+)', $key) . '$#';
-				
-				preg_match($pattern, $urlPath, $matches);
-				
-				/*
-					If there is any matches then assigns callback and middleware for it
-				*/
-				if(!empty($matches)) {	
-
+			if (isset(self::$routes['any'])) {
+				foreach (self::$routes['any'] as $key => $value) {
+					
 					/*
-						Regex pattern for extracting {$var} from url
+						Regex pattern for matching url path with {$var}
 					*/
-			        preg_match_all('/\{\$([a-zA-Z0-9_]+)\}/', $key, $paramNames);
+					$pattern = '#^' . preg_replace('/\{\$[a-zA-Z0-9_]+\}/', '([^/]+)', $key) . '$#';
+					
+					preg_match($pattern, $urlPath, $matches);
+					
+					/*
+						If there is any matches then assigns callback and middleware for it
+					*/
+					if(!empty($matches)) {	
 
-			        /*
-						Assigning {$var} to $params array
-			        */
-			        foreach ($paramNames[1] as $index => $paramName) {
-			          $params[$paramName] = $matches[$index + 1];
-			        }
+						/*
+							Regex pattern for extracting {$var} from url
+						*/
+				        preg_match_all('/\{\$([a-zA-Z0-9_]+)\}/', $key, $paramNames);
 
-			        /*
-						Assigning callback from Route definitions
-			        */
-			        $callback = $value;
+				        /*
+							Assigning {$var} to $params array
+				        */
+				        foreach ($paramNames[1] as $index => $paramName) {
+				          $params[$paramName] = $matches[$index + 1];
+				        }
 
-			        /*
-						Assigning middleware from Route definitions
-			        */
-			        $middleware = self::$middlewares['any'][$key] ?? false;
+				        /*
+							Assigning callback from Route definitions
+				        */
+				        $callback = $value;
 
-			        break;
+				        /*
+							Assigning middleware from Route definitions
+				        */
+				        $middleware = self::$middlewares['any'][$key] ?? false;
+
+				        break;
+					}
 				}
 			}
 
