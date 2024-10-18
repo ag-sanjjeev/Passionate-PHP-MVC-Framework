@@ -75,7 +75,7 @@ class Route
 	/**
 	 * Initiating routes entry point for this application 
 	 *	 
-	 * @author ag-sanjjeev <resulttext>	 
+	 * @author ag-sanjjeev 	 
 	 *
 	 */
 	function __construct()
@@ -108,7 +108,7 @@ class Route
 	 *
 	 * @param urlPath $path This is a valid url for the request
 	 * @param callback $callback This is a valid callback for the respective urlPath
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $routeInstance
 	 */
 	public static function get($path, $callback)
@@ -124,7 +124,7 @@ class Route
 	 *
 	 * @param urlPath $path This is a valid url for the request
 	 * @param callback $callback This is a valid callback for the respective urlPath
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $routeInstance
 	 */
 	public static function post($path, $callback)
@@ -140,7 +140,7 @@ class Route
 	 *
 	 * @param urlPath $path This is a valid url for the request
 	 * @param callback $callback This is a valid callback for the respective urlPath
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $routeInstance
 	 */
 	public static function any($path, $callback)
@@ -155,7 +155,7 @@ class Route
 	 * Registers all middlewares for respective requests
 	 *
 	 * @param middlewareName $middleware This is a valid middleware class name
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return $routeInstance
 	 */
 	public static function middleware($middleware)
@@ -186,7 +186,7 @@ class Route
 	/**
 	 * This method establishes routes for this application
 	 *	 
-	 * @author ag-sanjjeev <resulttext>
+	 * @author ag-sanjjeev 
 	 * @return response or callback
 	 */
 	public function establish()
