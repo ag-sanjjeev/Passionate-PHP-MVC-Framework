@@ -12,8 +12,7 @@
  *
  * LICENSE: This source file is subject to license that is available through the repository
  * at https://github.com/ag-sanjjeev. If you did not receive a complete copy of it.
- * Then get it from the above url has mentioned. Please send a note through the email at 
- * mailto:resulttext for any changes made in this project. For any other
+ * Then get it from the above url has mentioned. Please send a note through the author via contact details found in README for any changes made in this project. For any other
  * instructions to be followed as per license. And it can be found in this project.
  *
  * @category Framework
