@@ -44,7 +44,7 @@ After installing the framework, you can start building your web application by f
 4. Use the provided models or create your own models in the `models` directory to interact with the database table.
 5. Implement authentication and authorization and/or if you can implement any middleware logic as per your application and to meet your needs.
 
-For more usage find out in the documentation section [DOCS](docs/DOCS.md)
+For more usage find out in the [documentation](docs/documentation.md)
 
 ## Contributing
 
